@@ -71,8 +71,8 @@ visit [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)
 ## Links
 
 - [drSoft.fr on GitHub](https://github.com/drsoft-fr)
-- [GitHub](https://github.com/drsoft-fr/prestashop-module-drsoftfrcolineprotheme)
-- [Issues](https://github.com/drsoft-fr/prestashop-module-drsoftfrcolineprotheme/issues)
+- [GitHub](https://github.com/drsoft-fr/drsoftfrhookmanager)
+- [Issues](https://github.com/drsoft-fr/drsoftfrhookmanager/issues)
 - [www.drsoft.fr](https://www.drsoft.fr)
 
 ## Author
