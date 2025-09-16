@@ -45,7 +45,6 @@ class drsoftfrhookmanager extends Module
         $this->displayName = $this->trans('drSoft.fr Hook Manager', [], 'Modules.Drsoftfrhookmanager.Admin');
         $this->description = $this->trans('Manage the hooks available in your store. Add or remove any hooks as needed.', [], 'Modules.Drsoftfrhookmanager.Admin');
         $this->confirmUninstall = $this->trans('Are you sure you want to uninstall?', [], 'Modules.Drsoftfrhookmanager.Admin');
-        $this->table = 'hook';
     }
 
     /**
@@ -115,7 +114,7 @@ class drsoftfrhookmanager extends Module
         $helper->identifier = 'id_hook';
         $helper->show_toolbar = true;
         $helper->title = $this->trans('Available Hooks', [], 'Modules.Drsoftfrhookmanager.Admin');
-        $helper->table = $this->table;
+        $helper->table = 'hook';
         $helper->token = Tools::getAdminTokenLite('AdminModules');
         $helper->currentIndex = AdminController::$currentIndex . '&' . http_build_query(['configure' => $this->name]);
         $helper->no_link = true;
@@ -200,7 +199,7 @@ class drsoftfrhookmanager extends Module
         ];
 
         $helper = new HelperForm();
-        $helper->table = $this->table;
+        $helper->table = 'hook';
         $helper->name_controller = $this->name;
         $helper->token = Tools::getAdminTokenLite('AdminModules');
         $helper->currentIndex = AdminController::$currentIndex . '&' . http_build_query(['configure' => $this->name]);
