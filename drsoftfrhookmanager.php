@@ -222,10 +222,6 @@ class drsoftfrhookmanager extends Module
      * Toggles the active state of a hook by its ID. If the hook ID is invalid
      * or the hook cannot be updated, an error is registered. Upon successful update,
      * a confirmation message is added.
-     *
-     * @param int $hookId The identifier of the hook to be toggled.
-     *
-     * @return void
      */
     private function handleToggleActiveHook(int $hookId): void
     {
@@ -256,10 +252,6 @@ class drsoftfrhookmanager extends Module
 
     /**
      * Handles the deletion of a hook by its ID.
-     *
-     * @param int $hookId The ID of the hook to be deleted.
-     *
-     * @return void
      */
     private function handleDeleteHook(int $hookId): void
     {
@@ -294,8 +286,6 @@ class drsoftfrhookmanager extends Module
      * Handles the creation of a new hook in the system.
      * Validates the hook name, checks for duplicate hooks, and adds the hook if it passes validation.
      * Provides appropriate success or error messages to the controller context.
-     *
-     * @return void
      */
     private function handleCreateHook(): void
     {
@@ -345,9 +335,6 @@ class drsoftfrhookmanager extends Module
         }
     }
 
-    /**
-     * @return string
-     */
     public function getContent(): string
     {
         try {
@@ -374,8 +361,6 @@ class drsoftfrhookmanager extends Module
     }
 
     /**
-     * @return string
-     *
      * @throws PrestaShopDatabaseException
      */
     public function displayForm(): string
@@ -383,9 +368,6 @@ class drsoftfrhookmanager extends Module
         return $this->addForm() . $this->renderForm();
     }
 
-    /**
-     * @return bool
-     */
     public function isUsingNewTranslationSystem(): bool
     {
         return true;
