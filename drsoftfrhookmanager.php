@@ -104,6 +104,7 @@ class drsoftfrhookmanager extends Module
                 'width' => 'auto',
                 'type' => 'bool',
                 'class' => 'text-center',
+                'active' => 'active',
             ],
         ];
 
@@ -218,6 +219,42 @@ class drsoftfrhookmanager extends Module
     }
 
     /**
+     * Toggles the active state of a hook by its ID. If the hook ID is invalid
+     * or the hook cannot be updated, an error is registered. Upon successful update,
+     * a confirmation message is added.
+     *
+     * @param int $hookId The identifier of the hook to be toggled.
+     *
+     * @return void
+     */
+    private function handleToggleActiveHook(int $hookId): void
+    {
+        try {
+            $hook = new Hook($hookId);
+
+            if (false === Validate::isLoadedObject($hook)) {
+                $this->context->controller->errors[] = $this->trans("This hook could not be found. Please verify the hook ID.", [], 'Modules.Drsoftfrhookmanager.Admin');
+
+                return;
+            }
+
+            $hook->active = !$hook->active;
+
+            $hook->save();
+
+            $this->context->controller->confirmations[] = $this->trans("Hook successfully updated.", [], 'Modules.Drsoftfrhookmanager.Admin');
+        } catch (Throwable $t) {
+            $this->context->controller->errors[] = $this->trans(
+                "This hook cannot be updated by the module. Error: %s",
+                [
+                    $t->getMessage()
+                ],
+                'Modules.Drsoftfrhookmanager.Admin'
+            );
+        }
+    }
+
+    /**
      * Handles the deletion of a hook by its ID.
      *
      * @param int $hookId The ID of the hook to be deleted.
@@ -314,6 +351,12 @@ class drsoftfrhookmanager extends Module
     public function getContent(): string
     {
         try {
+            if (Tools::isSubmit('activehook')) {
+                $this->handleToggleActiveHook((int)Tools::getValue('id_hook'));
+
+                return $this->displayForm();
+            }
+
             if (Tools::isSubmit('deletehook')) {
                 $this->handleDeleteHook((int)Tools::getValue('id_hook'));
 
