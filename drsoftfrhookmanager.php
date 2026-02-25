@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-if (!defined('_PS_VERSION_') || !defined('_CAN_LOAD_FILES_')) {
+if (!defined('_PS_VERSION_')) {
     exit;
 }
 
@@ -33,7 +33,7 @@ class drsoftfrhookmanager extends Module
     {
         $this->name = 'drsoftfrhookmanager';
         $this->tab = 'administration';
-        $this->version = '1.0.0';
+        $this->version = '1.0.5';
         $this->author = 'drSoft.fr';
         $this->authorEmail = 'contact@drsoft.fr';
         $this->moduleGithubRepositoryUrl = 'https://github.com/drsoft-fr/drsoftfrhookmanager';
