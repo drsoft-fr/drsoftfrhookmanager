@@ -52,6 +52,18 @@ The configuration page allows you to:
 - PrestaShop 1.7.x or higher
 - PHP 7.2 or higher
 
+## Makefile
+
+Depuis le dossier du module :
+
+```bash
+make build
+make package
+make clean
+```
+
+Ce module ne nécessite pas de compilation. `make package` crée directement l’archive installable dans `dist/`.
+
 ## Support
 
 If you encounter problems or have questions:

@@ -1,0 +1,38 @@
+###> composer ###
+composer.lock
+/vendor/
+###< composer ###
+
+###> php-cs-fixer ###
+.php-cs-fixer.cache
+###< php-cs-fixer ###
+
+###> log ###
+*.log
+###< log ###
+
+###> phpstorm ###
+/.idea/
+###< phpstorm ###
+
+###> prestashop ###
+config*.xml
+###< prestashop ###
+
+###> views ###
+/views/.vite/*
+!/views/.vite/index.php
+/views/css/*
+!/views/css/index.php
+/views/img/*
+!/views/img/index.php
+!/views/img/logo-dark-master.png
+/views/js/*
+!/views/js/index.php
+/views/map/
+###< views ###
+
+###> app ###
+/docs/
+/dist/
+###< app ###
